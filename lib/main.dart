@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel/core/constants/color_constants.dart';
+import 'package:travel/core/representation/screens/splash_screen.dart';
 import 'package:travel/routes.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(primaryColor: ColorPalette.primaryColor),
       routes: routes,
-      home: MyHomePage(),
+      home: SplashScreen(),
     );
   }
 }
