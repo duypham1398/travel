@@ -6,6 +6,7 @@ import 'package:travel/core/constants/color_constants.dart';
 import 'package:travel/core/constants/dismension_constants.dart';
 import 'package:travel/core/constants/textstyle_constant.dart';
 import 'package:travel/core/helper/asset_helper.dart';
+import 'package:travel/core/representation/screens/main_app.dart';
 import 'package:travel/core/representation/widgets/button_widget.dart';
 
 import '../../helper/image_helper.dart';
@@ -26,6 +27,9 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   void initState() {
     super.initState();
+    _pageController.addListener(() {
+      _pageStreamController.add(_pageController.page!.toInt());
+    });
   }
 
   Widget _buildItemIntroScreen(String image, String title, String description,
@@ -109,10 +113,27 @@ class _IntroScreenState extends State<IntroScreen> {
                         activeDotColor: ColorPalette.yellowColor),
                   ),
                 ),
-                Expanded(
-                  flex: 4,
-                  child: const ButtonWidget(title: "Next"),
-                )
+                StreamBuilder<int>(
+                    initialData: 0,
+                    stream: _pageStreamController.stream,
+                    builder: (context, snapshot) {
+                      return Expanded(
+                        flex: 4,
+                        child: ButtonWidget(
+                          title: snapshot.data != 2 ? 'Next' : 'Get Started',
+                          ontap: () {
+                            if (_pageController != 2) {
+                              _pageController.nextPage(
+                                  duration: const Duration(microseconds: 200),
+                                  curve: Curves.easeIn);
+                            } else {
+                              Navigator.of(context)
+                                  .pushNamed(MainApp.routeName);
+                            }
+                          },
+                        ),
+                      );
+                    })
               ],
             ),
           ),

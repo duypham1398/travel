@@ -11,15 +11,18 @@ class ButtonWidget extends StatelessWidget {
   final Function()? ontap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: kDefaultPadding),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(kMediumPadding),
-          gradient: Gradients.defaultGradientBackground),
-      alignment: Alignment.center,
-      child: Text(
-        title,
-        style: TextStyles.defaultStyle.bold.whiteTextColor,
+    return GestureDetector(
+      onTap: ontap,
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: kDefaultPadding),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(kMediumPadding),
+            gradient: Gradients.defaultGradientBackground),
+        alignment: Alignment.center,
+        child: Text(
+          title,
+          style: TextStyles.defaultStyle.bold.whiteTextColor,
+        ),
       ),
     );
   }
