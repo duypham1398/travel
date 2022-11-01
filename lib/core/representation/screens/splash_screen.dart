@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:travel/core/helper/asset_helper.dart';
 import 'package:travel/core/helper/image_helper.dart';
+import 'package:travel/core/helper/local_storage_helper.dart';
 import 'package:travel/core/representation/screens/intro_screen.dart';
+import 'package:travel/core/representation/screens/main_app.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   static String routerName = '/splash_screen';
+
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
@@ -20,8 +23,15 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void redirectItroScreen() async {
+    final ignoreIntroScreen =
+        LocalStorageHelper.getValue('ignoreIntroScreen') as bool?;
     await Future.delayed(const Duration(seconds: 2));
-    Navigator.of(context).pushNamed(IntroScreen.routeName);
+    if (ignoreIntroScreen != null && ignoreIntroScreen) {
+      Navigator.of(context).pushNamed(MainApp.routeName);
+    } else {
+      LocalStorageHelper.setValue('ignoreIntroScreen', true);
+      Navigator.of(context).pushNamed(IntroScreen.routeName);
+    }
   }
 
   @override

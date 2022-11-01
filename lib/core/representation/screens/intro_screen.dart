@@ -122,7 +122,7 @@ class _IntroScreenState extends State<IntroScreen> {
                         child: ButtonWidget(
                           title: snapshot.data != 2 ? 'Next' : 'Get Started',
                           ontap: () {
-                            if (_pageController != 2) {
+                            if (_pageController.page != 2) {
                               _pageController.nextPage(
                                   duration: const Duration(microseconds: 200),
                                   curve: Curves.easeIn);
