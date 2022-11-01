@@ -50,13 +50,13 @@ class _MainAppState extends State<MainApp> {
                 icon: Icon(FontAwesomeIcons.house, size: kDefaultPadding),
                 title: Text('Home')),
             SalomonBottomBarItem(
-                icon: Icon(FontAwesomeIcons.heart, size: kDefaultPadding),
+                icon: Icon(FontAwesomeIcons.solidHeart, size: kDefaultPadding),
                 title: Text('Like')),
             SalomonBottomBarItem(
                 icon: Icon(FontAwesomeIcons.briefcase, size: kDefaultPadding),
                 title: Text('Booking')),
             SalomonBottomBarItem(
-                icon: Icon(FontAwesomeIcons.user, size: kDefaultPadding),
+                icon: Icon(FontAwesomeIcons.solidUser, size: kDefaultPadding),
                 title: Text('User')),
           ],
         ));
