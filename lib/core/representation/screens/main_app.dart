@@ -18,13 +18,13 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: ColorPalette.backgroundScaffoldColor,
         body: IndexedStack(
           index: _currentIndex,
           children: [
             HomeScreen(),
             Container(
-              color: Colors.red,
+              color: ColorPalette.backgroundScaffoldColor,
             ),
             Container(
               color: Colors.green,

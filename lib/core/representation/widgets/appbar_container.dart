@@ -11,19 +11,21 @@ class AppBarContainer extends StatelessWidget {
       required this.child,
       this.title,
       this.titleString,
-      this.implementLeading = false})
+      this.implementLeading = false,
+      this.implementTraling = false})
       : super(key: key);
   final Widget child;
   final Widget? title;
   final String? titleString;
   final bool implementLeading;
+  final bool implementTraling;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
           SizedBox(
-            height: 186,
+            height: 200,
             child: AppBar(
               centerTitle: true,
               automaticallyImplyLeading: false,
@@ -56,13 +58,28 @@ class AppBarContainer extends StatelessWidget {
                                 titleString ?? '',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 18,
+                                  fontSize: 20,
                                 ),
                               ),
                             ],
                           ),
                         ),
-                      )
+                      ),
+                      if (implementTraling)
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(kDefaultPadding),
+                            ),
+                            color: Colors.white,
+                          ),
+                          padding: EdgeInsets.all(kItemPadding),
+                          child: Icon(
+                            FontAwesomeIcons.bars,
+                            color: Colors.black,
+                            size: kDefaultPadding,
+                          ),
+                        ),
                     ],
                   ),
               flexibleSpace: Stack(

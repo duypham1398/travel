@@ -52,7 +52,7 @@ class _IntroScreenState extends State<IntroScreen> {
             children: [
               Text(
                 title,
-                style: TextStyles.defaultStyle.bold,
+                style: TextStyles.defaultStyle.bold.copyWith(fontSize: 24),
               ),
               SizedBox(
                 height: kMediumPadding * 2,
