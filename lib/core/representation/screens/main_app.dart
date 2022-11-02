@@ -9,12 +9,14 @@ import 'home_screen.dart';
 class MainApp extends StatefulWidget {
   const MainApp({Key? key}) : super(key: key);
   static String routeName = '/main_app';
+
   @override
   State<MainApp> createState() => _MainAppState();
 }
 
 class _MainAppState extends State<MainApp> {
   int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

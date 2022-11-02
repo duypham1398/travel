@@ -1,9 +1,12 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:travel/core/constants/color_constants.dart';
 import 'package:travel/core/constants/dismension_constants.dart';
 import 'package:travel/core/helper/asset_helper.dart';
 import 'package:travel/core/helper/image_helper.dart';
+import 'package:travel/core/representation/screens/hotel_screen.dart';
+import 'package:travel/core/representation/screens/intro_screen.dart';
 
 import '../widgets/appbar_container.dart';
 
@@ -15,12 +18,33 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Widget _buildItemCategory(
+      Widget icon, Color color, Function() onTap, String title) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(vertical: kMediumPadding),
+            decoration: BoxDecoration(
+              color: color.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(kItemPadding),
+            ),
+            child: icon,
+          ),
+          SizedBox(height: kItemPadding),
+          Text(title)
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return AppBarContainer(
       title: Padding(
-        padding:
-            EdgeInsets.symmetric(horizontal: kMediumPadding).copyWith(top: 30),
+        padding: EdgeInsets.symmetric(horizontal: kMediumPadding),
         child: Row(
           children: [
             Column(
@@ -66,22 +90,52 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           TextField(
             decoration: InputDecoration(
-              fillColor: Colors.white,
-              filled: true,
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.all(Radius.circular(kItemPadding)),
-              ),
-              hintText: 'Search your destination',
-              prefixIcon: Padding(
-                padding: EdgeInsets.all(kTopPadding),
-                child: Icon(
-                  FontAwesomeIcons.magnifyingGlass,
-                  color: Colors.black,
-                  size: kDefaultIconSize,
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.all(Radius.circular(kItemPadding)),
                 ),
-              ),
-            ),
+                hintText: 'Search your destination',
+                prefixIcon: Padding(
+                  padding: EdgeInsets.all(kTopPadding),
+                  child: Icon(
+                    FontAwesomeIcons.magnifyingGlass,
+                    color: Colors.black,
+                    size: kDefaultIconSize,
+                  ),
+                ),
+                contentPadding: EdgeInsets.symmetric(horizontal: kItemPadding)),
+          ),
+          SizedBox(height: kDefaultPadding),
+          Row(
+            children: [
+              Expanded(
+                  child: _buildItemCategory(
+                      ImageHelper.loadFromAsset(AssetHelper.IconHotel,
+                          width: kMediumPadding, height: kMediumPadding),
+                      ColorPalette.yellowColor,
+                      () {
+                        Navigator.of(context).pushNamed(HotelScreen.routeName);
+                      },
+                      'Hotel')),
+              SizedBox(width: kDefaultPadding),
+              Expanded(
+                  child: _buildItemCategory(
+                      ImageHelper.loadFromAsset(AssetHelper.IconPlane,
+                          width: kMediumPadding, height: kMediumPadding),
+                      ColorPalette.yellowColor,
+                      () {},
+                      'Flights')),
+              SizedBox(width: kDefaultPadding),
+              Expanded(
+                  child: _buildItemCategory(
+                      ImageHelper.loadFromAsset(AssetHelper.IconHotelPlane,
+                          width: kMediumPadding, height: kMediumPadding),
+                      ColorPalette.yellowColor,
+                      () {},
+                      'All')),
+            ],
           )
         ],
       ),
