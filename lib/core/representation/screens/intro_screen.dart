@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:travel/core/constants/color_constants.dart';
@@ -122,9 +121,9 @@ class _IntroScreenState extends State<IntroScreen> {
                         child: ButtonWidget(
                           title: snapshot.data != 2 ? 'Next' : 'Get Started',
                           ontap: () {
-                            if (_pageController != 2) {
+                            if (_pageController.page != 2) {
                               _pageController.nextPage(
-                                  duration: const Duration(microseconds: 200),
+                                  duration: Duration(microseconds: 200),
                                   curve: Curves.easeIn);
                             } else {
                               Navigator.of(context)
