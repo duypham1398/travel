@@ -1,14 +1,14 @@
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel/core/constants/color_constants.dart';
 import 'package:travel/core/constants/dismension_constants.dart';
 import 'package:travel/core/helper/asset_helper.dart';
 import 'package:travel/core/helper/image_helper.dart';
-import 'package:travel/core/representation/screens/hotel_screen.dart';
-import 'package:travel/core/representation/screens/intro_screen.dart';
+
+// import 'package:travel/core/representation/screens/intro_screen.dart';
 
 import '../widgets/appbar_container.dart';
+import 'hotel_booking_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -114,11 +114,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: _buildItemCategory(
                       ImageHelper.loadFromAsset(AssetHelper.IconHotel,
                           width: kMediumPadding, height: kMediumPadding),
-                      ColorPalette.yellowColor,
-                      () {
-                        Navigator.of(context).pushNamed(HotelScreen.routeName);
-                      },
-                      'Hotel')),
+                      ColorPalette.yellowColor, () {
+                Navigator.of(context).pushNamed(HotelBookingScreen.routeName);
+              }, 'Hotel')),
               SizedBox(width: kDefaultPadding),
               Expanded(
                   child: _buildItemCategory(
