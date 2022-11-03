@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import 'package:travel/core/constants/color_constants.dart';
 import 'package:travel/core/constants/dismension_constants.dart';
-import 'package:travel/core/representation/widgets/appbar_container.dart';
-import 'package:travel/core/representation/widgets/button_widget.dart';
+import 'package:travel/representation/widgets/appbar_container.dart';
+import 'package:travel/representation/widgets/button_widget.dart';
 
 class SelectDateScreen extends StatelessWidget {
   // const SelectDateScreen(
@@ -12,6 +12,7 @@ class SelectDateScreen extends StatelessWidget {
   static final String routeName = '/select_date_screen';
   DateTime? rangeStartDate;
   DateTime? rangeEndDate;
+
   @override
   Widget build(BuildContext context) {
     return AppBarContainer(
@@ -49,7 +50,12 @@ class SelectDateScreen extends StatelessWidget {
           SizedBox(
             height: kDefaultPadding,
           ),
-          ButtonWidget(title: 'Cancel')
+          ButtonWidget(
+            title: 'Cancel',
+            ontap: () {
+              Navigator.of(context).pop();
+            },
+          )
         ],
       ),
     );

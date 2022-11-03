@@ -36,18 +36,23 @@ class AppBarContainer extends StatelessWidget {
                   Row(
                     children: [
                       if (implementLeading)
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(kDefaultPadding),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(kDefaultPadding),
+                              ),
+                              color: Colors.white,
                             ),
-                            color: Colors.white,
-                          ),
-                          padding: EdgeInsets.all(kItemPadding),
-                          child: Icon(
-                            FontAwesomeIcons.arrowLeft,
-                            color: Colors.black,
-                            size: kDefaultPadding,
+                            padding: EdgeInsets.all(kItemPadding),
+                            child: Icon(
+                              FontAwesomeIcons.arrowLeft,
+                              color: Colors.black,
+                              size: kDefaultPadding,
+                            ),
                           ),
                         ),
                       Expanded(
@@ -58,7 +63,7 @@ class AppBarContainer extends StatelessWidget {
                                 titleString ?? '',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                                  fontSize: 30,
                                 ),
                               ),
                             ],

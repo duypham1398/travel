@@ -1,14 +1,14 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:travel/core/constants/color_constants.dart';
 import 'package:travel/core/constants/dismension_constants.dart';
 import 'package:travel/core/constants/textstyle_constant.dart';
 import 'package:travel/core/helper/asset_helper.dart';
-import 'package:travel/core/representation/screens/main_app.dart';
-import 'package:travel/core/representation/widgets/button_widget.dart';
-
-import '../../helper/image_helper.dart';
+import 'package:travel/core/helper/image_helper.dart';
+import 'package:travel/representation/screens/main_app.dart';
+import 'package:travel/representation/widgets/button_widget.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({Key? key}) : super(key: key);

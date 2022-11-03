@@ -4,6 +4,7 @@ import 'package:travel/core/constants/color_constants.dart';
 import 'package:travel/core/constants/dismension_constants.dart';
 import 'package:travel/core/helper/asset_helper.dart';
 import 'package:travel/core/helper/image_helper.dart';
+import 'package:travel/representation/screens/profile_screen.dart';
 
 // import 'package:travel/core/representation/screens/intro_screen.dart';
 
@@ -81,7 +82,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(kItemPadding)),
               padding: EdgeInsets.only(top: kMinPadding),
-              child: ImageHelper.loadFromAsset(AssetHelper.Avatar),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.of(context).pushNamed(ProfileScreen.routeName);
+                },
+                  child: ImageHelper.loadFromAsset(AssetHelper.Avatar)),
             )
           ],
         ),

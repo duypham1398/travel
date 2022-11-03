@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:travel/core/helper/asset_helper.dart';
 import 'package:travel/core/helper/image_helper.dart';
 import 'package:travel/core/helper/local_storage_helper.dart';
-import 'package:travel/core/representation/screens/intro_screen.dart';
-import 'package:travel/core/representation/screens/main_app.dart';
+import 'package:travel/representation/screens/intro_screen.dart';
+import 'package:travel/representation/screens/main_app.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
