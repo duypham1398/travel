@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:travel/representation/screens/detail_hotel_screen.dart';
 import 'package:travel/representation/screens/guest_and_room_screen.dart';
 import 'package:travel/representation/screens/hotel_booking_screen.dart';
 import 'package:travel/representation/screens/hotel_screen.dart';
@@ -12,9 +13,10 @@ final Map<String, WidgetBuilder> routes = {
   SplashScreen.routerName: (context) => const SplashScreen(),
   IntroScreen.routeName: (context) => const IntroScreen(),
   MainApp.routeName: (context) => const MainApp(),
-  HotelScreen.routeName: (context) => const HotelScreen(),
+  HotelScreen.routeName: (context) => HotelScreen(),
   HotelBookingScreen.routeName: (context) => const HotelBookingScreen(),
   SelectDateScreen.routeName: (context) => SelectDateScreen(),
   GuestAndRoomScreen.routeName: (context) => GuestAndRoomScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
+  DetailHotelScreen.routeName: (context) => DetailHotelScreen(),
 };
