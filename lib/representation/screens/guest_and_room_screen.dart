@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:travel/core/constants/dismension_constants.dart';
 import 'package:travel/representation/widgets/appbar_container.dart';
 
+import '../widgets/Item_add_guest_and_room.dart';
+
 class GuestAndRoomScreen extends StatelessWidget {
   // const GuestAndRoomScreen({Key? key}) : super(key: key);
   static final String routeName = '/guest_and_room_screen';
