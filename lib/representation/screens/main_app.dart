@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:travel/core/constants/color_constants.dart';
 import 'package:travel/core/constants/dismension_constants.dart';
+import 'package:travel/representation/screens/profile_screen.dart';
 
 import 'home_screen.dart';
 
@@ -31,9 +32,7 @@ class _MainAppState extends State<MainApp> {
             Container(
               color: Colors.green,
             ),
-            Container(
-              color: Colors.yellow,
-            ),
+            ProfileScreen(),
           ],
         ),
         bottomNavigationBar: SalomonBottomBar(

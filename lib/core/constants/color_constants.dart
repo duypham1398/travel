@@ -9,6 +9,7 @@ class ColorPalette {
   static const Color subTitleColor = Color(0xFF838383);
   static const Color backgroundScaffoldColor = Color(0xFFF2F2F2);
   static const Color notchooseColor = Color(0xffD8D8D8);
+  static const Color boderColor = Color(0xffE5E5E5);
 }
 
 class Gradients {

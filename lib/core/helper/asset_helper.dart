@@ -18,4 +18,9 @@ class AssetHelper {
   static const String IconRoom = 'assets/icons/Room.png';
   static const String Iconincrease = 'assets/icons/increase.png';
   static const String Icondeincrease = 'assets/icons/deincrease.png';
+  static const String iconLocation = 'assets/icons/IconLocation.png';
+  static const String iconStar = 'assets/icons/IconStar.png';
+  static const String imageHotel1 = 'assets/images/ImageHotel1.png';
+  static const String imageHotel2 = 'assets/images/ImageHotel2.png';
+  static const String imageHotel3 = 'assets/images/ImageHotel3.png';
 }
