@@ -10,6 +10,7 @@ class ColorPalette {
   static const Color backgroundScaffoldColor = Color(0xFFF2F2F2);
   static const Color notchooseColor = Color(0xffD8D8D8);
   static const Color boderColor = Color(0xffE5E5E5);
+  static const Color heartColor = Color(0xffF5DCDC);
 }
 
 class Gradients {
