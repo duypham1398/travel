@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(primaryColor: ColorPalette.primaryColor),
       routes: routes,
+      onGenerateRoute: generateRoutes,
       home: SplashScreen(),
     );
   }

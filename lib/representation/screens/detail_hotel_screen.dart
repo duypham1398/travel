@@ -5,18 +5,22 @@ import 'package:travel/core/constants/dismension_constants.dart';
 import 'package:travel/core/helper/asset_helper.dart';
 import 'package:travel/core/helper/image_helper.dart';
 import 'package:travel/data/models/hotel_model.dart';
+import 'package:travel/representation/widgets/line_widget.dart';
 
 class DetailHotelScreen extends StatefulWidget {
   const DetailHotelScreen({Key? key, required this.hotelModel})
       : super(key: key);
   static final String routeName = '/detail_hotel_screen';
+
   final HotelModel hotelModel;
+
   @override
   State<DetailHotelScreen> createState() => _DetailHotelScreenState();
 }
 
 class _DetailHotelScreenState extends State<DetailHotelScreen> {
   Color heartColor = ColorPalette.heartColor;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,6 +123,79 @@ class _DetailHotelScreenState extends State<DetailHotelScreen> {
                     Expanded(
                       child: ListView(
                         controller: scrollController,
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                flex: 4,
+                                child: Text(
+                                  widget.hotelModel.hotelName,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      r'$' + widget.hotelModel.price.toString(),
+                                      style: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text('/night')
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(height: 16),
+                          Row(
+                            children: [
+                              Image.asset(
+                                AssetHelper.iconLocation,
+                              ),
+                              SizedBox(width: kDefaultPadding),
+                              Text(
+                                widget.hotelModel.location,
+                              ),
+                            ],
+                          ),
+                          LineWidget(),
+                          Row(
+                            children: [
+                              Expanded(
+                                  flex: 3,
+                                  child: Row(
+                                    children: [
+                                      Image.asset(AssetHelper.iconStar),
+                                      SizedBox(width: kDefaultPadding),
+                                      Text(widget.hotelModel.star.toString() +
+                                          '/5'),
+                                      Text(
+                                          ' (${widget.hotelModel.numberOfReview.toString()} reviews)')
+                                    ],
+                                  )),
+                              Expanded(
+                                child: Text(
+                                  'See all',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: ColorPalette.primaryColor),
+                                ),
+                              )
+                            ],
+                          ),
+                          LineWidget(),
+                          Text(
+                            'Information',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                          SizedBox(height: 16),
+                        ],
                       ),
                     ),
                   ],
