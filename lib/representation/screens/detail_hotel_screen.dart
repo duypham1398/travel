@@ -5,6 +5,8 @@ import 'package:travel/core/constants/dismension_constants.dart';
 import 'package:travel/core/helper/asset_helper.dart';
 import 'package:travel/core/helper/image_helper.dart';
 import 'package:travel/data/models/hotel_model.dart';
+import 'package:travel/representation/screens/select_room_screen.dart';
+import 'package:travel/representation/widgets/button_widget.dart';
 import 'package:travel/representation/widgets/line_widget.dart';
 
 class DetailHotelScreen extends StatefulWidget {
@@ -195,6 +197,111 @@ class _DetailHotelScreenState extends State<DetailHotelScreen> {
                                 fontWeight: FontWeight.bold, fontSize: 16),
                           ),
                           SizedBox(height: 16),
+                          Text(
+                            'You will find every comfort because many of the services that the hotel offers for travellers and of course the hotel is very comfortable.',
+                          ),
+                          // SizedBox(height: 16),
+                          Row(
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Image.asset(
+                                  AssetHelper.iconRestaurant,
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Image.asset(AssetHelper.iconWifi),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Image.asset(AssetHelper.iconExchange),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Image.asset(AssetHelper.iconReception),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Image.asset(AssetHelper.iconMore),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  margin: EdgeInsets.only(left: 8),
+                                  child: Text(
+                                    'Restaurant',
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  margin: EdgeInsets.only(left: 8),
+                                  child: Text(
+                                    'Wifi',
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  margin: EdgeInsets.only(left: 8),
+                                  child: Text(
+                                    'Currency Exchange',
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  margin: EdgeInsets.only(left: 8),
+                                  child: Text(
+                                    '24-hour Front Desk',
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  margin: EdgeInsets.only(left: 8),
+                                  child: Text(
+                                    'More',
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: kMediumPadding),
+                          Text(
+                            'Location',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                          SizedBox(height: 16),
+                          Text(
+                            'Located in the famous neighborhood of Seoul, Grand Luxury’s is set in a building built in the 2010s.',
+                          ),
+                          SizedBox(height: kMediumPadding),
+                          ImageHelper.loadFromAsset(AssetHelper.imageMaps),
+                          SizedBox(height: kMediumPadding),
+                          ButtonWidget(
+                            title: 'Select Room',
+                            ontap: () {
+                              Navigator.of(context)
+                                  .pushNamed(SelectRoomScreen.routeName);
+                            },
+                          ),
+                          SizedBox(height: kMediumPadding),
                         ],
                       ),
                     ),

@@ -11,6 +11,7 @@ class ColorPalette {
   static const Color notchooseColor = Color(0xffD8D8D8);
   static const Color boderColor = Color(0xffE5E5E5);
   static const Color heartColor = Color(0xffF5DCDC);
+  static const Color addItemCheckout = Color(0xffE0DDF5);
 }
 
 class Gradients {

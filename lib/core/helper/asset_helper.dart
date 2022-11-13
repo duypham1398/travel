@@ -24,4 +24,23 @@ class AssetHelper {
   static const String imageHotel2 = 'assets/images/ImageHotel2.png';
   static const String imageHotel3 = 'assets/images/ImageHotel3.png';
   static const String imageHotelDetail = 'assets/images/hotel_detail.png';
+  static const String iconExchange = 'assets/icons/exchange.png';
+  static const String iconMore = 'assets/icons/more.png';
+  static const String iconReception = 'assets/icons/reception.png';
+  static const String iconWifi = 'assets/icons/wifi.png';
+  static const String iconRestaurant = 'assets/icons/restaurant.png';
+  static const String imageMaps = 'assets/images/maps.png';
+  static const String iconFreeWifi = 'assets/icons/Wififree.png';
+  static const String iconBreakfast = 'assets/icons/breakfast.png';
+  static const String iconNonSmoking = 'assets/icons/nonsmoking.png';
+  static const String iconRefun = 'assets/icons/refun.png';
+  static const String imageHome1 = 'assets/images/imghome1.png';
+  static const String imageHome2 = 'assets/images/imghome2.png';
+  static const String imageHome3 = 'assets/images/imghome3.png';
+  static const String imageHome4 = 'assets/images/imghome4.png';
+  static const String imageRoom1 = 'assets/images/room1.png';
+  static const String imageRoom2 = 'assets/images/room2.png';
+  static const String imageRoom3 = 'assets/images/room3.png';
+  static const String iconUser = 'assets/icons/user.png';
+  static const String iconPromo = 'assets/icons/promo.png';
 }
